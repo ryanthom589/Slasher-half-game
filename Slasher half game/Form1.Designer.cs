@@ -32,6 +32,7 @@
             this.leftPictureBox = new System.Windows.Forms.PictureBox();
             this.middlePictureBox = new System.Windows.Forms.PictureBox();
             this.rightPictureBox = new System.Windows.Forms.PictureBox();
+            this.questionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.leftPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.middlePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rightPictureBox)).BeginInit();
@@ -78,11 +79,22 @@
             this.rightPictureBox.TabIndex = 6;
             this.rightPictureBox.TabStop = false;
             // 
+            // questionLabel
+            // 
+            this.questionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.questionLabel.Location = new System.Drawing.Point(13, 197);
+            this.questionLabel.Name = "questionLabel";
+            this.questionLabel.Size = new System.Drawing.Size(775, 128);
+            this.questionLabel.TabIndex = 7;
+            this.questionLabel.Text = "label1";
+            this.questionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.questionLabel);
             this.Controls.Add(this.rightPictureBox);
             this.Controls.Add(this.middlePictureBox);
             this.Controls.Add(this.leftPictureBox);
@@ -103,6 +115,7 @@
         private System.Windows.Forms.PictureBox leftPictureBox;
         private System.Windows.Forms.PictureBox middlePictureBox;
         private System.Windows.Forms.PictureBox rightPictureBox;
+        private System.Windows.Forms.Label questionLabel;
     }
 }
 
