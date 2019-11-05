@@ -83,6 +83,16 @@ namespace Slasher_half_game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cottage {
+            get {
+                object obj = ResourceManager.GetObject("cottage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Gas_can {
             get {
                 object obj = ResourceManager.GetObject("Gas_can", resourceCulture);

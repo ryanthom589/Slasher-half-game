@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.outputLabel = new System.Windows.Forms.Label();
+            this.gameLabel = new System.Windows.Forms.Label();
             this.leftPictureBox = new System.Windows.Forms.PictureBox();
             this.middlePictureBox = new System.Windows.Forms.PictureBox();
             this.rightPictureBox = new System.Windows.Forms.PictureBox();
@@ -38,16 +38,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.rightPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // outputLabel
+            // gameLabel
             // 
-            this.outputLabel.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outputLabel.Location = new System.Drawing.Point(-2, -1);
-            this.outputLabel.Name = "outputLabel";
-            this.outputLabel.Size = new System.Drawing.Size(807, 203);
-            this.outputLabel.TabIndex = 0;
-            this.outputLabel.Text = "Dont split up";
-            this.outputLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.outputLabel.Click += new System.EventHandler(this.Label1_Click);
+            this.gameLabel.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameLabel.Location = new System.Drawing.Point(-2, -1);
+            this.gameLabel.Name = "gameLabel";
+            this.gameLabel.Size = new System.Drawing.Size(807, 203);
+            this.gameLabel.TabIndex = 0;
+            this.gameLabel.Text = "Dont split up";
+            this.gameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.gameLabel.Click += new System.EventHandler(this.Label1_Click);
             // 
             // leftPictureBox
             // 
@@ -98,7 +98,7 @@
             this.Controls.Add(this.rightPictureBox);
             this.Controls.Add(this.middlePictureBox);
             this.Controls.Add(this.leftPictureBox);
-            this.Controls.Add(this.outputLabel);
+            this.Controls.Add(this.gameLabel);
             this.Name = "Form1";
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
@@ -111,7 +111,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label outputLabel;
+        private System.Windows.Forms.Label gameLabel;
         private System.Windows.Forms.PictureBox leftPictureBox;
         private System.Windows.Forms.PictureBox middlePictureBox;
         private System.Windows.Forms.PictureBox rightPictureBox;
