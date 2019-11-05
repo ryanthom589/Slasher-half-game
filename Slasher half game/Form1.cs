@@ -36,12 +36,8 @@ namespace Slasher_half_game
                 //60/40 chance of escaping and living
                 
                 else if (scene == 26) { scene = 27; }
-                else if (scene == 27)
-                {
-                    carGas = true;
-                    scene = 28;
-                }
-                else if (scene == 28) { scene = 21; }
+                
+                else if (scene == 27) { scene = 21; }
             
                 else if (scene == 30)
                 {
@@ -66,7 +62,7 @@ namespace Slasher_half_game
                     else if (scene == 33)
                     {
 
-                        double randValue = randGen.Next(1, 101);
+                     
                         if (randValue > 50) { scene = 35; }
                         else { scene = 34; }
                     }
@@ -85,8 +81,8 @@ namespace Slasher_half_game
                 else if (scene == 20) { scene = 23; }
                 else if (scene == 22) { scene = 33; }
                 else if (scene == 24) { scene = 33; }
-                else if (scene == 25) { scene = 26; }
-                else if (scene == 26) {
+             
+                else if (scene == 27) {
                     carGas = true;
                   scene = 28; }
                 else if (scene == 28) { scene = 29; }
@@ -166,11 +162,14 @@ namespace Slasher_half_game
                     middlePictureBox.Visible = false;
                     questionLabel.Visible = false;
                     gameLabel.Text = "The bank accounts can handle a little less spending anyways, you will also get there sooner! ....You slowly get through the rush hour traffic, making it to the cottage in about 3 hours.";
-                    break;
-                case 26:
+
+                    Refresh();
+                    Thread.Sleep(4000);
+
                     leftPictureBox.Visible = true;
                     middlePictureBox.Visible = true;
                     gameLabel.Text = "As you pull up to the cottage a warning light in the car flashes telling you you are about to run out of fuel. James says there is a can of gas in the shed..";
+                    questionLabel.Visible = true;
                     questionLabel.Text = "Fill up the gas for when you leave or do it later?";
                     leftPictureBox.BackgroundImage = Properties.Resources.Gas_can;
                     middlePictureBox.BackgroundImage = Properties.Resources.cottage;
@@ -179,12 +178,20 @@ namespace Slasher_half_game
                     leftPictureBox.Visible = false;
                     middlePictureBox.Visible = false;
                     questionLabel.Visible = false;
-                    gameLabel.Text = "You go to the shed and grab the can of gas with James and come and fill the car up with gas. ";
+                    gameLabel.Text = "You go to the shed and grab the can of gas with James and come and fill the car up with gas. You go down and unlock the cottage and begin to grab dinner, since lunch has passed and it is getting late..James points out a muddy footprint on the deck, and says someone must've been checking out the cottage.";
+                    carGas = true;
+                    questionLabel.Visible = true;
+                    questionLabel.Text = "The sun is starting to set, do you want to have a campfire or go for a walk?";
                     break;
                 case 28:
                     leftPictureBox.Visible = true;
                     middlePictureBox.Visible = true;
-                    gameLabel.Text = "You go down and unlock the cottage and begin to grab dinner, since lunch has passed and it is getting late..James points out a muddy footprint on the deck, and says someone must've been checking out the cottage.";
+                    gameLabel.Text = "You go down and unlock the cottage and begin to grab dinner, since lunch has passed and it is getting late..";
+
+                    Refresh();
+                    Thread.Sleep(4000);
+
+                    gameLabel.Text = "James points out a muddy footprint on the deck, and says someone must've been checking out the cottage.";
                     questionLabel.Text = "The sun is starting to set, do you want to have a campfire or go for a walk?";
                     break;
                 case 29:
