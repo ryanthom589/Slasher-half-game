@@ -32,14 +32,14 @@ namespace Slasher_half_game
                 //cut wood or set up chairs
                 else if (scene == 21) { scene = 22; }
                else if (scene == 22) { scene = 30; }
-                else if (scene == 24) { scene = 30; }
+                else if (scene == 23) { scene = 30; }
                 //60/40 chance of escaping and living
                 
                 else if (scene == 26) { scene = 27; }
                 
                 else if (scene == 27) { scene = 21; }
             
-                else if (scene == 30)
+                else if (scene == 30) 
                 {
                     double randValue = randGen.Next(1, 101);
                     if (randValue <= 60)
@@ -80,10 +80,10 @@ namespace Slasher_half_game
                 if (scene == 18) { scene = 25; }
                 else if (scene == 20) { scene = 23; }
                 else if (scene == 22) { scene = 33; }
-                else if (scene == 24) { scene = 33; }
+                else if (scene == 23) { scene = 33; }
              
-                else if (scene == 27) {
-                    carGas = true;
+                else if (scene == 26) {
+                    
                   scene = 28; }
                 else if (scene == 28) { scene = 29; }
                 else if (scene == 29) { scene = 37; }
@@ -151,6 +151,7 @@ namespace Slasher_half_game
                    gameLabel.Text = "All of the chairs seem to be broken.  It  looks like  someone has been sleeping on them...  So you settle for the crappier sun faded lawn chairs.";
                     Thread.Sleep(4000);
                     gameLabel.Text = "You guys start the camp fire all is good for a while... then there are some noises.  Could that be who stole the ax?";
+                    questionLabel.Visible = true;
                     questionLabel.Text = "Do you want to split up and help James look for his great grandfathers Vietnamese hatchet? Yes / No ";
                     leftPictureBox.Visible = true;
                     middlePictureBox.Visible = true;
@@ -190,7 +191,7 @@ namespace Slasher_half_game
 
                     Refresh();
                     Thread.Sleep(4000);
-
+                    carGas = true;
                     gameLabel.Text = "James points out a muddy footprint on the deck, and says someone must've been checking out the cottage.";
                     questionLabel.Text = "The sun is starting to set, do you want to have a campfire or go for a walk?";
                     break;
@@ -224,19 +225,32 @@ namespace Slasher_half_game
                     middlePictureBox.Visible = false;
                     questionLabel.Visible = false;
                     gameLabel.Text = "You stay back at the fire, all seems good.";
+                    double randValue = randGen.Next(1, 101);
+                    if (randValue <= 50)
+                    {
+                        leftPictureBox.Visible = false;
+                        middlePictureBox.Visible = false;
+                        questionLabel.Visible = false;
+                        gameLabel.Text = "He comes back about twenty minutes later with the hatchet, turns out it was raccoon family that was living in the shed, and the father made off with it when you guys arrived... You got the happy ending";
+
+                        Refresh();
+                        Thread.Sleep(6000);
+
+                        scene = 40;
+                    }
+                    else if (randValue <= 50)
+                    {
+                        leftPictureBox.Visible = false;
+                        middlePictureBox.Visible = false;
+                        questionLabel.Visible = false;
+                        gameLabel.Text = "You call the police, they come and find him killed with the ax, you're blamed for his murder.  Why didn't you go search with him?... You got the blame game ending";
+
+                        Refresh();
+                        Thread.Sleep(4000);
+
+                        scene = 40;
+                    }
                     //50/50 hes alive
-                    break;
-                case 34:
-                    leftPictureBox.Visible = false;
-                    middlePictureBox.Visible = false;
-                    questionLabel.Visible = false;
-                    gameLabel.Text = "He comes back about twenty minutes later with the hatchet, turns out it was raccoon family that was living in the shed, and the father made off with it when you guys arrived... You got the happy ending";
-                    break;
-                case 35:
-                    leftPictureBox.Visible = false;
-                    middlePictureBox.Visible = false;
-                    questionLabel.Visible = false;
-                    gameLabel.Text = "You call the police, they come and find him killed with the ax, you're blamed for his murder.  Why didn't you go search with him?... You got the blame game ending";
                     break;
                 case 36:
                     leftPictureBox.Visible = false;
