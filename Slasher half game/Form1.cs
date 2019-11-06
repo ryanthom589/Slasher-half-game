@@ -92,12 +92,7 @@ namespace Slasher_half_game
                     if (randValue > 10) { scene = 38; }
                     else { scene = 39;  }
                     }
-                else if (scene == 33) {
-
-                    double randValue = randGen.Next(1, 101);
-                    if (randValue > 50) { scene = 35; }
-                    else { scene = 34; }
-                }
+            
               
                 else if (scene == 38) { scene = 40; }
                 else if (scene == 39) { scene = 40; }
@@ -149,6 +144,7 @@ namespace Slasher_half_game
                     middlePictureBox.Visible = false;
                     questionLabel.Visible = false;
                    gameLabel.Text = "All of the chairs seem to be broken.  It  looks like  someone has been sleeping on them...  So you settle for the crappier sun faded lawn chairs.";
+                    Refresh();
                     Thread.Sleep(4000);
                     gameLabel.Text = "You guys start the camp fire all is good for a while... then there are some noises.  Could that be who stole the ax?";
                     questionLabel.Visible = true;
@@ -206,39 +202,55 @@ namespace Slasher_half_game
                     middlePictureBox.Visible = false;
                     questionLabel.Visible = false;
                     gameLabel.Text = "You Left and James goes right, there is a loud russel a crack and your head hurts.";
+                    double randValue = randGen.Next(1, 101);
+                    if (randValue <= 60)
+                    {
+
+                        leftPictureBox.Visible = true;
+                        middlePictureBox.Visible = true;
+                        gameLabel.Text = "After passing out, you come to in James' wood shed, you're tied up you use your pocket knife to get out.  James is tied up as well, the guy with the ax is gone.";
+                        questionLabel.Text = "Do you save James. Yes/No";
+                        questionLabel.Visible = true;
+                        //leftPictureBox.BackgroundImage = Properties.Resources.yesas;
+                        //middlePictureBox.BackgroundImage = Properties.Resources.non;
+                        Thread.Sleep(3000);
+                        Refresh();
+                    } else if (randValue > 60) {
+                        gameLabel.Text = "Ouch that had to hurt. You are never heard from again and your body is never found";
+                        Thread.Sleep(3000);
+                        Refresh();
+                        scene = 40;
+                        
+                    }
                     break;
                 case 31:
                     questionLabel.Visible = false;
                     gameLabel.Text = "The car will not start, the killer gets you and James'... you got the stupid ending.";
-                    break;
-                case 32:
-                    leftPictureBox.Visible = true;
-                    middlePictureBox.Visible = true;
-                    gameLabel.Text = "After passing out, you come to in James' wood shed, you're tied up you use your pocket knife to get out.  James is tied up as well, the guy with the ax is gone.";
-                    questionLabel.Text = "Do you save James. Yes/No";
-                    questionLabel.Visible = true;
-                    //leftPictureBox.BackgroundImage = Properties.Resources.yesas;
-                    //middlePictureBox.BackgroundImage = Properties.Resources.non;
                     break;
                 case 33:
                     leftPictureBox.Visible = false;
                     middlePictureBox.Visible = false;
                     questionLabel.Visible = false;
                     gameLabel.Text = "You stay back at the fire, all seems good.";
-                    double randValue = randGen.Next(1, 101);
-                    if (randValue <= 50)
+
+                    Refresh();
+                    Thread.Sleep(3000);
+                   
+                    double randValue2 = randGen.Next(1, 101);
+                    if (randValue2 < 50)
                     {
                         leftPictureBox.Visible = false;
                         middlePictureBox.Visible = false;
                         questionLabel.Visible = false;
                         gameLabel.Text = "He comes back about twenty minutes later with the hatchet, turns out it was raccoon family that was living in the shed, and the father made off with it when you guys arrived... You got the happy ending";
 
+                        
+                        Thread.Sleep(3000);
                         Refresh();
-                        Thread.Sleep(6000);
 
                         scene = 40;
                     }
-                    else if (randValue <= 50)
+                    else if (randValue2 > 50)
                     {
                         leftPictureBox.Visible = false;
                         middlePictureBox.Visible = false;
