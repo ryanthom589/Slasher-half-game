@@ -302,6 +302,7 @@ namespace Slasher_half_game
                     scene = 40;
                     break;
                 case 40:
+                    //test ending scene, button has to be pushed for some reason
                     Refresh();
                     Thread.Sleep(500);
                     this.Close();
