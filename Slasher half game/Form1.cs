@@ -39,15 +39,7 @@ namespace Slasher_half_game
                 
                 else if (scene == 27) { scene = 21; }
             
-                else if (scene == 30) 
-                {
-                    double randValue = randGen.Next(1, 101);
-                    if (randValue <= 60)
-                    {
-                        scene = 32;
-                    }
-                    else scene = 0;
-                }
+         
                 else if (scene == 31) { scene = 40; }
                 else if (scene == 32)
                 {
@@ -69,9 +61,8 @@ namespace Slasher_half_game
                     else scene = 37;
 
                 }
-                else if (scene == 36) { scene = 40; }
-                else if (scene == 37) { scene = 40; }
-                else if (scene == 40) { scene = 0; }
+       
+               // else if (scene == 40) { scene = 0; }
                
             }
 
@@ -94,8 +85,7 @@ namespace Slasher_half_game
                     }
             
               
-                else if (scene == 38) { scene = 40; }
-                else if (scene == 39) { scene = 40; }
+               
 
                 //else if (scene == 40) { scene = 41; }
             }
@@ -202,6 +192,8 @@ namespace Slasher_half_game
                     middlePictureBox.Visible = false;
                     questionLabel.Visible = false;
                     gameLabel.Text = "You Left and James goes right, there is a loud russel a crack and your head hurts.";
+                    Thread.Sleep(300);
+                    Refresh();
                     double randValue = randGen.Next(1, 101);
                     if (randValue <= 60)
                     {
@@ -269,26 +261,51 @@ namespace Slasher_half_game
                     middlePictureBox.Visible = false;
                     questionLabel.Visible = false;
                     gameLabel.Text = "You guys run to James' car get in and drive off.... you got the good ending";
+
+
+                    Refresh();
+                    Thread.Sleep(4000);
+
+                    scene = 40;
                     break;
                 case 37:
                     leftPictureBox.Visible = false;
                     middlePictureBox.Visible = false;
                     questionLabel.Visible = false;
                     gameLabel.Text = "The 'Killer' comes back towards you guys, it's James' uncle George?  He though you guys were breaking into the cottage. All of you go back to the camp fire and have a good vacation...You got the cool ending!";
+
+                    Refresh();
+                    Thread.Sleep(4000);
+
+                    scene = 40;
                     break;
                 case 38:
                     leftPictureBox.Visible = false;
                     middlePictureBox.Visible = false;
                     questionLabel.Visible = false;
                     gameLabel.Text = "Turns out the killer was your ex boy friend and was just out for you, James is alive and well, you were never seen again.... You got the karma ending!";
+
+                    Refresh();
+                    Thread.Sleep(4000);
+
+                    scene = 40;
                     break;
                 case 39:
                     leftPictureBox.Visible = false;
                     middlePictureBox.Visible = false;
                     questionLabel.Visible = false;
                     gameLabel.Text = "You're alive, for some reason, and have life threatening injuries.  Way to pay a friend back for a holiday.  ...You got the jerk ending.";
-                    break;
 
+                    Refresh();
+                    Thread.Sleep(4000);
+
+                    scene = 40;
+                    break;
+                case 40:
+                    Refresh();
+                    Thread.Sleep(500);
+                    this.Close();
+                    break;
 
             }
         }
